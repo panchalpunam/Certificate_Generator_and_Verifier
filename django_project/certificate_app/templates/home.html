@@ -1,0 +1,55 @@
+<!--This is Home page -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Welcome to Certificate Maker</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            text-align: center;
+            padding: 100px;
+        }
+        h1 {
+            color: #007bff;
+        }
+        p {
+            color: #333;
+            font-size: 18px;
+            margin-top: 20px;
+        }
+        .action-button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            margin: 10px;
+            text-decoration: none;
+        }
+        .action-button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome to Certificate Maker</h1>
+        <p>
+            Generate beautiful certificates for your students or colleagues and download in PDF format
+            <br>
+          <!-- Action buttons for creating and verifying certificates -->
+            <a class="action-button" href="{% url 'certificate_app:create_certificate' %}">Create a Certificate</a>
+            <a class="action-button" href="{% url 'certificate_app:verify_certificate' %}">Verify a Certificate</a>
+        </p>
+    </div>
+</body>
+</html>
+

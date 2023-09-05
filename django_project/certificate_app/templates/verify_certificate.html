@@ -1,0 +1,91 @@
+<!--This is page for verify/authenticate of certificate  -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Verify Certificate</title>
+    <style>
+        body {
+            background-color: #f0f0f0;
+            font-family: Arial, sans-serif;
+        }
+
+        h1 {
+            text-align: center;
+            color: #007bff;
+            margin-bottom: 20px;
+        }
+
+        form {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            margin: 0 auto;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        input[type="text"] {
+            width: 90%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-bottom: 15px;
+        }
+
+        button[type="submit"] {
+            background-color: #007bff;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+
+        .error-message {
+            color: #dc3545;
+            margin-top: 10px;
+            text-align: center;
+            
+        }
+    </style>
+</head>
+<body>
+    <h1>Verify Certificate</h1>
+  
+    <form  method="post" >
+        {% csrf_token %}
+        <label for="vcode">Enter Certificate Code:</label>
+        <input type="text" id="vcode" name="vcode" required>
+        <br>
+        <button type="submit">Verify</button>
+    </form>
+  
+    {% if error_message %}
+  <!-- Display error message if certificate verification fails -->
+    <p class="error-message">{{ error_message }}</p>
+    {% endif %}
+
+   <!-- Action buttons for refreshing and going back -->
+    <div style="display: flex; justify-content: center; margin-top: 20px;">
+    <div style="margin-right: 20px;">
+        <a class="action-button" href="{% url 'certificate_app:verify_certificate' %}">Refresh</a>
+    </div>
+    <div>
+        <a class="action-button" href="{% url 'certificate_app:home' %}">Back</a>
+    </div>
+</div>
+  
+</body>
+</html>

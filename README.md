@@ -57,7 +57,7 @@ To set up the required dependencies for this application, you can use the `requi
 1. Clone this repository.
 
    ```sh
-   git clone https://github.com/your-username/certificate-generator.git
+   git clone [https://github.com/your-username/certificate-generator.git](https://github.com/panchalpunam/Certificate_Generator_and_Verifier.git)
 
 
 
